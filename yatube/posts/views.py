@@ -63,7 +63,7 @@ def post_detail(request, post_id):
 @login_required
 def post_create(request):
     form = PostForm(request.POST or None)
-    if form.is_valid(): 
+    if form.is_valid():
         create_post = form.save(commit=False)
         create_post.author = request.user
         create_post.save()
